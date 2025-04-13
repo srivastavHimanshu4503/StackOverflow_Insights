@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StackOverflow Tag Analysis</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-matrix@1.2.0/dist/chartjs-chart-matrix.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <h1>📊 StackOverflow Insights (2014–2024)</h1>
+        <p>Explore trends, tag distributions, and question activity using real StackOverflow data</p>
+    </header>
+
+    <main>
+        <section class="chart-section">
+            <div class="chart-section">
+                <h2>Top Tags by Year</h2>
+                <label for="yearDropdown">Select Year:</label>
+                <select id="yearDropdown"></select>
+                <div class="container">
+                    <canvas id="topTagsChart"></canvas>
+                    <!-- 🌟 Tag Trends Summary Section -->
+                    <section id="top-tags-summary"
+                        style="background: #fdfdfd; padding: 2.5rem; border-radius: 12px; margin-top: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05); font-family: 'Segoe UI', sans-serif;">
+                        <h2 style="text-align: center; color: #333; font-size: 1.8rem;">🏆 Top Programming Tags
+                            (2014–2024)</h2>
+
+                        <div style="margin-top: 1.5rem; line-height: 1.7; color: #444; font-size: 1rem;">
+                            <p><strong>🔹 Python</strong> has seen a meteoric rise, becoming the most dominant language
+                                since 2018, and maintaining the top spot through 2024 despite a slight decline after
+                                2021.</p>
+                            <p><strong>🔹 JavaScript</strong> started strong and remained in the top 2–3 tags throughout
+                                the decade, although its usage gradually declined after 2016.</p>
+                            <p><strong>🔹 Java</strong> was consistently strong early in the decade but experienced a
+                                steady drop in popularity post-2016.</p>
+                            <p><strong>🔹 C#</strong> remained in the top 5–6 throughout most of the decade with minor
+                                fluctuations.</p>
+                            <p><strong>🔹 ReactJS</strong> emerged in 2018 and quickly climbed the ranks, reflecting
+                                modern frontend trends and developer demand.</p>
+                            <p><strong>🔹 Android</strong> had a strong early presence but has seen a noticeable decline
+                                in recent years.</p>
+                            <p><strong>🔹 PHP</strong> and <strong>jQuery</strong> were major players early on but faded
+                                steadily, being overtaken by more modern tools like React and Python frameworks.</p>
+                            <p><strong>🔹 TypeScript</strong> and <strong>Flutter</strong> appear later in the decade,
+                                signaling newer and popular frameworks gaining traction post-2020.</p>
+                            <p><strong>🔹 R</strong> maintained a niche presence in analytics and data science, peaking
+                                in the mid-2020s.</p>
+                        </div>
+
+                        <div style="margin-top: 2rem; text-align: center;">
+                            <small style="color: #888;">Data compiled from top Stack Overflow tags each year
+                                (2014–2024)</small>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="chart-section">
+            <h2>2. Tag Trends Over Time</h2>
+            <div class="container">
+                <canvas id="tagTrendsChart"></canvas>
+                <section id="tag-trend-analysis"
+                    style="padding: 2rem; background: #f4f6f8; border-radius: 12px; margin-top: 2rem;">
+                    <h2 style="text-align: center; color: #333;">📈 Top Tag Trends Over Time (2014–2024)</h2>
+                    <div id="trend-insights"
+                        style="margin-top: 2rem; font-family: 'Segoe UI', sans-serif; color: #444;">
+                        <h3 style="color: #222;">🔍 Insights</h3>
+                        <ul style="line-height: 1.6;">
+                            <li><strong>Python</strong> shows the most dramatic rise, peaking around 2021–2022.</li>
+                            <li><strong>JavaScript</strong> remained consistently high, though slightly declining in
+                                recent years.</li>
+                            <li><strong>Java</strong> and <strong>C#</strong> saw steady declines post-2016.</li>
+                            <li><strong>ReactJS</strong>, <strong>Flutter</strong>, and <strong>TypeScript</strong> show
+                                strong growth since 2017, indicating modern frontend framework adoption.</li>
+                            <li>Tags like <strong>jQuery</strong> and <strong>PHP</strong> are clearly declining in
+                                popularity.</li>
+                            <li> Mobile platform-specific tags like <strong>Android</strong>and <strong>iOS</strong>saw
+                                decreased interest, while cross-platform tools like <strong>Flutter</strong> gained
+                                momentum.</li>
+                        </ul>
+                    </div>
+                    <div style="margin-top: 2rem; text-align: center;">
+                        <small style="color: #888;">Overall, the trends highlight a clear transition in developer preferences toward
+                            versatile,modern,
+                            and efficient technologies.</small>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+
+        <section class="chart-section">
+            <h2>3. Tag Distribution for a Specific Year</h2>
+            <div class="chart-container">
+                <label for="tagDistributionYear">Select Year for Tag Distribution:</label>
+                <select id="tagDistributionYear">
+                    <option value="2024" selected>2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
+                    <option value="2015">2015</option>
+                    <option value="2014">2014</option>
+                </select>
+                <div class="container">
+                    <canvas id="tagDistributionChart" width="400" height="400"></canvas>
+                    <section
+                        style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 2rem 0; padding: 1.5rem; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
+                        <h2 style="color: #333; border-bottom: 2px solid #ddd; padding-bottom: 0.5rem;">📊 Tag
+                            Distribution Overview — <span style="color: #007BFF;">2024</span></h2>
+
+                        <p style="color: #555; line-height: 1.6; margin-top: 1rem;">
+                            The year <strong>2024</strong> reflected clear trends in developer technology preferences.
+                            <strong>Python</strong> led the landscape with a significant <strong>3.72%</strong> share,
+                            emphasizing its dominance in data science, AI, and general-purpose programming.
+                        </p>
+
+                        <p style="color: #555; line-height: 1.6;">
+                            <strong>JavaScript</strong> followed as a close second at <strong>1.96%</strong>,
+                            maintaining its relevance across full-stack development. Established enterprise languages
+                            like <strong>C#</strong> (1.61%) and <strong>Java</strong> (1.57%) still held notable
+                            ground.
+                        </p>
+
+                        <p style="color: #555; line-height: 1.6;">
+                            The growing popularity of modern web and mobile technologies was evident with
+                            <strong>ReactJS</strong> (1.17%), <strong>Flutter</strong> (0.95%), and
+                            <strong>TypeScript</strong> (0.87%) rising steadily. Meanwhile, older mobile tech like
+                            <strong>Android</strong> (1.32%) remains relevant but shows signs of plateauing.
+                        </p>
+
+                        <div style="margin-top: 2rem;">
+                            <h3 style="color: #444;">🔝 Top 10 Tags of 2024</h3>
+                            <ol style="color: #333; line-height: 1.8; padding-left: 1.2rem;">
+                                <li><strong>Python</strong> – 3.72%</li>
+                                <li><strong>JavaScript</strong> – 1.96%</li>
+                                <li><strong>C#</strong> – 1.61%</li>
+                                <li><strong>Java</strong> – 1.57%</li>
+                                <li><strong>Android</strong> – 1.32%</li>
+                                <li><strong>ReactJS</strong> – 1.17%</li>
+                                <li><strong>C++</strong> – 0.98%</li>
+                                <li><strong>Flutter</strong> – 0.95%</li>
+                                <li><strong>TypeScript</strong> – 0.87%</li>
+                                <li><strong>R</strong> – 0.81%</li>
+                            </ol>
+                        </div>
+
+                        <p style="margin-top: 1.5rem; color: #777; font-style: italic;">
+                            Data reflects percentage distribution of tag usage in 2024, indicating trends in developer
+                            focus and technology adoption.
+                        </p>
+                    </section>
+
+                </div>
+            </div>
+
+        </section>
+
+        <section class="chart-section">
+            <h2>4. Unique vs Repeated Tags</h2>
+            <div class="container">
+                <canvas id="tagUniquenessChart" width="800" height="400"></canvas>
+                <section
+                    style="font-family: Arial, sans-serif; min-width: 100%; line-height: 1.6; background-color: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h2 style="color: #333;">📊 Tag Diversity Summary (2014–2024)</h2>
+
+                    <p>
+                        Over the last decade, the tech landscape has maintained a steady reliance on <strong>repeated
+                            tags</strong>, which consistently account for <strong>60–63%</strong> of all tags used each
+                        year. This reflects the ongoing relevance of core technologies and programming languages that
+                        continue to dominate developer discussions.
+                    </p>
+
+                    <p>
+                        At the same time, there's been a noticeable and encouraging rise in <strong>unique tags</strong>
+                        —
+                        growing from <strong>37.22%</strong> in 2014 to a peak of <strong>41.36%</strong> in 2024. This
+                        trend highlights a shift toward innovation, experimentation, and the adoption of new frameworks,
+                        tools, and languages.
+                    </p>
+
+                    <blockquote style="border-left: 4px solid #4bc0c0; padding-left: 15px; color: #444; margin: 1em 0;">
+                        The increasing share of unique tags suggests a more diverse and rapidly evolving developer
+                        ecosystem.
+                    </blockquote>
+
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                        <thead>
+                            <tr style="background-color: #4bc0c0; color: white;">
+                                <th style="padding: 8px; text-align: left;">Year</th>
+                                <th style="padding: 8px; text-align: left;">Unique Tags (%)</th>
+                                <th style="padding: 8px; text-align: left;">Repeated Tags (%)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 8px;">2014</td>
+                                <td>37.22</td>
+                                <td>62.78</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px;">2018</td>
+                                <td>40.14</td>
+                                <td>59.86</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px;">2021</td>
+                                <td>40.75</td>
+                                <td>59.25</td>
+                            </tr>
+                            <tr style="background-color: #e8f7f7;">
+                                <td style="padding: 8px;"><strong>2024</strong></td>
+                                <td><strong>41.36</strong></td>
+                                <td><strong>58.64</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <footer style="margin-top: 20px; font-size: 0.9em; color: #666;">
+                        📈 Data suggests a healthy balance between consistency and innovation in developer communities.
+                    </footer>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Himanshu Srivastav | Powered by Flask & Chart.js</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

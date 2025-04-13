@@ -1,0 +1,171 @@
+/* Reset and base setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #eef2f3, #ffffff);
+  color: #333;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 20px 10px;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeInDown 1s ease-in-out;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Section styles */
+section {
+  margin: 30px 0;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #4158d0, #c850c0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#topTagsChart {
+  width: 1450px !important;
+  height: 560px !important;
+}
+
+#tagTrendsChart{
+  width: 1450px !important;
+  height: 850px !important;
+}
+
+#tagDistributionChart, #tagUniquenessChart {
+  width: 800px !important;
+  height: 600px !important;
+}
+
+/* Dropdown */
+select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+select:hover {
+  border-color: #6a82fb;
+  box-shadow: 0 0 6px rgba(106, 130, 251, 0.4);
+}
+
+/* Chart containers */
+canvas {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+canvas:hover {
+  transform: scale(1.01);
+}
+
+/* Insights and text containers */
+.insight-box {
+  background: linear-gradient(to right, #ffffff, #f7faff);
+  border-left: 6px solid #6a82fb;
+  padding: 16px 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  margin: 15px 0;
+  transition: transform 0.3s ease;
+}
+.insight-box:hover {
+  transform: translateY(-5px);
+}
+
+/* Table styles */
+.table-box {
+  background: #f9f9ff;
+  padding: 16px;
+  border-radius: 10px;
+  overflow-x: auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.table-box table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table-box th, .table-box td {
+  padding: 10px;
+  text-align: left;
+}
+.table-box th {
+  background-color: #6a82fb;
+  color: white;
+}
+.table-box tr:nth-child(even) {
+  background-color: #f0f4ff;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Responsive Layout */
+@media (min-width: 768px) {
+  .row {
+      display: flex;
+      gap: 20px;
+  }
+  .row > div {
+      flex: 1;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  } to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  } to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

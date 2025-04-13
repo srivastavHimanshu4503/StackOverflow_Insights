@@ -1,0 +1,55 @@
+1. Top Tags of Each Year
+What: Identify most frequently used tags for each year.
+
+Why: Shows trending technologies/questions year-wise.
+
+Chart Type: Bar Chart or Horizontal Bar (Top 10 per year)
+
+2. Tag Trends Over Time
+What: How often specific tags appeared across years.
+
+Why: Track rise and fall of technologies (e.g., python, javascript, reactjs, etc.).
+
+Chart Type: Line Chart (Tag on Y-axis, Year on X-axis)
+
+3. Total Questions Asked Per Year
+What: Number of unique Question IDs per year.
+
+Why: To observe StackOverflow’s growth or decline.
+
+Chart Type: Bar Chart or Area Chart
+
+4. Tag Distribution for a Specific Year
+What: Proportions of top tags in a given year.
+
+Why: Helps understand popularity in a snapshot.
+
+Chart Type: Doughnut or Pie Chart
+
+5. Monthly Tag Frequency
+What: Count tags by month across all years.
+
+Why: See if certain months are more active.
+
+Chart Type: Heatmap or Grouped Bar Chart
+
+6. Multi-Tag Questions Trend
+What: Number of tags per question.
+
+Why: See if questions are becoming more complex.
+
+Chart Type: Histogram or Boxplot
+
+7. Unique vs Repeated Tags
+What: Find ratio of unique tags to repeated ones.
+
+Why: Measure diversity in questions.
+
+Chart Type: Pie Chart or Gauge
+
+8. Tags per Question Distribution
+What: Distribution of number of tags used per question.
+
+Why: Insights into question tagging behavior.
+
+Chart Type: Histogram
